@@ -82,3 +82,10 @@ Instead, what happens if we start by looking at the largest possible cases and
 then reducing the search space iteratively?
 
 This makes me think of some sort of two pointers approach.
+
+Say we have pointers `p1` and `p2` corresponding to indices of the zero-indexed
+string `s`. Having these two pointers allows us to slice the string as needed,
+which I believe is a O(1) operation. If we initialize these pointers to 0 and len(s) - 1 respectively, we can check if this substring slice (same as the initial string) is a substring without duplicate characters. If it is, this substring is the LSWDC (longest substring without duplicate characters) and hence the initial string is the LSWDC.
+
+But what if it's not? Can we arbitrarily move one of the two pointers "inwards"
+and check again?
